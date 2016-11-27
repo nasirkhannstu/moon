@@ -109,7 +109,7 @@
 
                         <div class="grid-product-header">
                             <h4 class="product-name">
-                                <a href="/store/liquid-l-carnitine.html">{{ $product->name}}</a>
+                                <a href="{{ url('p/'.$product->slug)}}">{{ $product->name}}</a>
                             </h4>
                             <!-- <div class="promoLabel">
                                 <span class="label success">
@@ -119,21 +119,21 @@
                         </div>
 
                         <div class="product-image">
-                            <a href="/store/liquid-l-carnitine.html" title="Allmax Liquid L-Carnitine">
-                                <img src="{{ asset('uploads/product/'. $product->image) }}" alt="Allmax Liquid L-Carnitine">
+                            <a href="{{ url('p/'.$product->slug)}}" title="{{ $product->name}}">
+                                <img src="{{ asset('uploads/product/'. $product->image) }}" alt="{{ $product->name}}">
                             </a>
                         </div>
                         <div class="prodDataWrap">
                             
-                                <div class="price-box">
-                                <span class="retail-price">
-                                <del><span class="price">$25.99</span></del>
-                                </span>
-                                    <span class="price">$19.99</span>
-                                </div>
-                                <div class="savings">
-                                    <a href="{{ route('product.addToCart', ['id' => $product->id]) }}" class="btn btn-success" role="button">Add To Cart</a>
-                                </div>
+                            <div class="price-box">
+                                <!-- <span class="retail-price">
+                                    <del><span class="price">$25.99</span></del>
+                                </span> -->
+                                <span class="price">${{ $product->price}}</span>
+                            </div>
+                            <div class="savings">
+                                <a href="{{ route('product.addToCart', ['id' => $product->id]) }}" class="btn btn-success" role="button">Add To Cart</a>
+                            </div>
                             
                         </div>
                     </div>

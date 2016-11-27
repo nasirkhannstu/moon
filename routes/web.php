@@ -12,8 +12,6 @@
 */
 
 
-Route::get('/', ['uses' => 'PagesController@getIndex', 'as' => 'pages.index']);
-
 
 // Blog Routes
 Route::resource('blog', 'BlogController');
@@ -32,7 +30,12 @@ Route::get('/reduceC/{id}', ['uses' => 'ProductController@getReduceByOneC', 'as'
 Route::get('/remove/{id}', ['uses' => 'ProductController@getRemoveItem', 'as' => 'product.remove']);
 
 Route::get('/shopping-cart', ['uses' => 'ProductController@getCart', 'as' => 'product.shoppingCart']);
-// Route::get('/cart', ['uses' => 'PagesController@getCart', 'as' => 'pages.cart']);
+
+//Pages
+Route::get('/', ['uses' => 'PagesController@getIndex', 'as' => 'pages.index']);
+// Route::get('/single/{id}', ['uses' => 'PagesController@getSingle', 'as' => 'pages.single']);
+
+Route::get('p/{slug}', ['uses' => 'PagesController@getSingleProduct', 'as' => 'blog.single'])->where('slug', '[\w\d\-\_]+');
 
 //Admin Panel
 Route::get('/adminpanel', 'AdminpanelController@getIndex');

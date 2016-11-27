@@ -1,65 +1,38 @@
 @extends('main')
 @section('title', '| Moonster-Gear')
 @section('stylsheets')
-  {!! Html::style('css/cart/app.css') !!} 
+  {!! Html::style('css/appSingle.css') !!} 
+  {!! Html::style('css/appSingle1.css') !!} 
 @endsection
 @section('content')
-        <div id="main-wrap" >
-            
-            
-    <div class="breadcrumb">
-    	            <a href="https://www.muscleandstrength.com/" title="Home" id="bc-home" class="breadcrumb-0">
-			Home &raquo;</a>
-          
-      
-    	            <a href="https://www.muscleandstrength.com/store/" title="Store" id="bc-store" class="breadcrumb-1">
-			Store &raquo;</a>
-          
-      
-    	                  Creactor          
-      
-      </div>
+<div id="main-wrap" >
 
-            <div class="main-content">
-                            </div>
-            <script type="text/javascript">
-    if (typeof StrandsTrack == "undefined") {
-        StrandsTrack = [];
-    }
-    StrandsTrack.push({
-        event: "visited",
-        item: "15588"
-    });
-    var optionsPrice = new Product.OptionsPrice([]);
-</script>
-
-<div class="main-content">
+  <div class="main-content">
     <div class="message-wrap">
         <div id="messages_product_view"></div>
     </div>
     <div class="product-header" itemscope itemtype="http://schema.org/Product">
         <div class="product-title-wrap">
             <h1 class="product-title" itemprop="name">
-                MuscleTech Creactor            </h1>
+                {{ $product->name }}
+            </h1>
         </div>
         <div class="product-image">
-            <script>
-    // Picture element HTML5 shiv
-    document.createElement( "picture" );
-</script>
-<script src="https://cdn.muscleandstrength.com/store/skin/frontend/mnsv4/default/js/picturefill.js" async></script>
 
-    <picture class="large" >
-        <source srcset="https://cdn.muscleandstrength.com/store/media/catalog/product/cache/1/large_image/200x200/602f0fa2c1f0d1ba5e241f914e856ff9/c/r/creactor2.jpg" media="(max-width: 400px)">
-        <source srcset="https://cdn.muscleandstrength.com/store/media/catalog/product/cache/1/large_image/300x300/602f0fa2c1f0d1ba5e241f914e856ff9/c/r/creactor2.jpg" media="(max-width: 1080px)">
-        <img itemprop="image" id="image" src="https://cdn.muscleandstrength.com/store/media/catalog/product/cache/1/large_image/400x400/602f0fa2c1f0d1ba5e241f914e856ff9/c/r/creactor2.jpg" alt="Creactor" title="Creactor">
-    </picture>
+          <picture class="large" >
+              <img itemprop="image" id="image" src="{{ asset('uploads/product/'. $product->image) }}" alt="Creactor" title="Creactor">
+          </picture>
         </div>
         <div class="product-info">
-                                        <span class="brand" itemprop="brand" itemscope itemtype="http://schema.org/Brand">
-				<div class="brand">A <a itemprop="url" href="/store/manufacturer/muscletech.html"><span itemprop="name">MuscleTech</span></a> Product</div>			</span>
-                        <div class="tagline">Unique Free-Acid Creatine To Boost Size &amp; Strength!*</div>
-                                </div>
+          <span class="brand" itemprop="brand" itemscope itemtype="http://schema.org/Brand">
+            <div class="brand">A <a itemprop="url" href="/store/manufacturer/muscletech.html">
+              <span itemprop="name">MuscleTech</span></a> Product
+            </div>     
+          </span>
+          <div class="tagline">
+            Unique Free-Acid Creatine To Boost Size &amp; Strength!*
+          </div>
+        </div>
         <div class="product-data">
             <a href="#reviews" class="review-status-button"  itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
                                     <meta itemprop="worstRating" content="1"/>
@@ -250,10 +223,8 @@
     </div>
 </div>
 <div class="aside aside-after">
-
-    
-    <div class="product-shop">
-        <div class="shop-wrap">
+  <div class="product-shop">
+    <div class="shop-wrap">
             <div class="section-title">Buying Options</div>
 
             <form action="https://www.muscleandstrength.com/store/checkout/cart/add/uenc/aHR0cHM6Ly93d3cubXVzY2xlYW5kc3RyZW5ndGguY29tL3N0b3JlL2NyZWFjdG9yLmh0bWw,/product/15588/form_key/SEt5cTBgXjHLDngK/" method="post"
@@ -277,11 +248,11 @@
                                 </span>
             </div>
             <div class="title">120 Servings</div>
-                                                                                	    	<br>
-	<div class="deal">
-		<span class="label success">
-			Buy 1 Get 1 FREE		</span>
-	</div>
+                                                                                        <br>
+  <div class="deal">
+    <span class="label success">
+      Buy 1 Get 1 FREE    </span>
+  </div>
         </div>
         <div class="fields">
             <div class="row">
@@ -536,8 +507,8 @@
         </div>
         <div class="recommended-products-list recommended-swiper-container">
                 <div class="strandsRecs swiper-wrapper"
-		tpl="prod_4"
-				item="15588"		></div>
+    tpl="prod_4"
+        item="15588"    ></div>
         </div>
         <div class="recommended-pagination-wrap">
             <button class="pagination-view-all disable-swiper-btn" data-items="8">View All (8)</button>
@@ -573,13 +544,13 @@
 
 <h5 class="hstyle-three creactorBlue">Ehnanced Solubility with Creactor</h5>
 <div class="row">
-	<div class="qg-half">
-		<p><img src="https://cdn.muscleandstrength.com/store/media/wysiwyg/Products/C/CreactorShakerGraphic.jpg" alt="Solubility of Creactor" /></p>
-			</div>
+  <div class="qg-half">
+    <p><img src="https://cdn.muscleandstrength.com/store/media/wysiwyg/Products/C/CreactorShakerGraphic.jpg" alt="Solubility of Creactor" /></p>
+      </div>
 
-	<div class="qg-half">
-		<p>Both forms of creatine in Creactor™ are engineered for increased solubility. You’ll notice this the very first time you mix a delicious serving of Creactor™ in water. It mixes almost instantly with no sedimentation so that no particles are sitting in the bottom of the glass. With Creactor™, you get high-quality, 100% ultra-pure creatine HCl and free-acid creatine with absolutely zero fillers, carbs, sugar or fat.*</p>
-	</div>
+  <div class="qg-half">
+    <p>Both forms of creatine in Creactor™ are engineered for increased solubility. You’ll notice this the very first time you mix a delicious serving of Creactor™ in water. It mixes almost instantly with no sedimentation so that no particles are sitting in the bottom of the glass. With Creactor™, you get high-quality, 100% ultra-pure creatine HCl and free-acid creatine with absolutely zero fillers, carbs, sugar or fat.*</p>
+  </div>
 </div>
 
 <h5 class="hstyle-three creactorBlue">Boosts Gains in Size & Strength and Speeds Recovery</h5>
@@ -1681,7 +1652,8 @@ jQuery(function() {
                });
             });
         }
-        </script><script type="text/javascript">
+        </script>
+        <script type="text/javascript">
     //<![CDATA[
     var productAddToCartForm = new VarienForm('product_addtocart_form');
     productAddToCartForm.submit = function (button, event, url) {
@@ -1805,7 +1777,7 @@ jQuery(function() {
         }, 
         {}
     );
-		
+    
         Validation.add(
         'validate-has_enough_points', 
         CAPTION_NOT_ENOUGH_POINTS, 
@@ -1839,7 +1811,7 @@ jQuery(function() {
             }
         }, 
         {}
-    );	  	  
+    );        
     });
 
 </script>
@@ -2223,4 +2195,6 @@ jQuery(function() {
             </ul>
 
         </nav>     </div>
+
+    
 @endsection

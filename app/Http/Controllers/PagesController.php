@@ -13,9 +13,12 @@ class PagesController extends Controller
 
         return view('pages.welcome')->withProducts($products);
     }
-    public function getSingle($id){
-    	$product = Product::find($id);
-
-        return view('pages.welcome')->withProduct($product);
+    // public function getSingle($id){
+    // 	$product = Product::find($id);
+    //     return view('pages.single')->withProduct($product);
+    // }
+    public function getSingleProduct($slug){
+    	$product = Product::where('slug', "=", $slug)->first();
+        return view('pages.single')->withProduct($product);
     }
 }

@@ -11,7 +11,7 @@
 
 			<div class="panel-body">
 				<img src="{{ asset('uploads/product/'. $product->image) }}" alt="img" width="100%">
-				<h4>Slug: {!! $product->slug !!}</h4>
+				<h4> <a href="{{ url('p/'.$product->slug)}}">Slug: {{ url('p/'.$product->slug)}}</a></h4>
 				<h4>Price: {!! $product->price !!}</h4>
 				<h4>Created At: {!! $product->created_at !!}</h4>
 				<br>

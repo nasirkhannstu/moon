@@ -28,7 +28,7 @@
 				{{Form::text('name',null,array('class' => 'form-control','required'=>'','maxlength'=>'255'))}}
 
 				{{Form::label('slug','Slug:')}}
-				{{Form::text('slug', null,array('class' => 'form-control','required'=>'','maxlength'=>'225'))}}
+				{{Form::text('slug', null,array('class' => 'form-control','required'=>'','maxlength'=>'225','min'=>'5'))}}
 
 				{{Form::label('price','Price:')}}
 				{{Form::text('price',null,array('class' => 'form-control','required'=>'','maxlength'=>'255'))}}
